@@ -1,0 +1,18 @@
+.feature-image {
+    /* max-height: 50vh; */
+}
+
+body {
+    width: 50vw;
+    margin: 0 auto 20vh;
+    font-size: 1.2em;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}

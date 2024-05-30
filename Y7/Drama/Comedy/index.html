@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Comedy Task - Term 2 - Drama</title>
+        <style type="text/css">
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: #ddd;
+            }
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                height: 10vh;
+                margin: 0;
+                line-height: 10vh;
+            }
+            .column {
+                width: 33.33%;
+                height: 43vh;
+                display: block;
+                float: left;
+                overflow: hidden;
+            }
+            .column a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+            .column img {
+                height: 100%;
+                opacity: 0.5;
+            }
+            .question-link {
+                position: relative;
+                background: black no-repeat 50% 50%;
+                background-size: cover;
+                font-size: 200px;
+                text-align: center;
+                line-height: 400px;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.3);
+                text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+                transition: all 200ms;
+            }
+            .question-link span {
+                position: relative;
+            }
+            .question-link:hover {
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .question-link::before {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0);
+                transition: all 200ms;
+            }
+            .question-link:hover::before {
+                background-color: rgba(0,0,0,0.3);
+            }
+            #q1img {
+                background-image: url('/images/Q1-Theatre-of-Dionysus.webp');
+            }
+            #q2img {
+                background-image: url('/images/Q2-without-google.webp');
+            }
+            #q3img {
+                background-image: url('/images/Q3-skeleton-fight.jpg');
+            }
+            #q4img {
+                background-image: url('/images/Q4-satire.jpeg');
+            }
+            #q5img {
+                background-image: url('/images/Q5-charlie.jpeg');
+            }
+            #q6img {
+                background-image: url('/images/Q6-shaq.png');
+            }
+            .clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+            #marking {
+                margin: 100px auto;
+                padding: 0 1em;
+                width: 30vw;
+                border: solid 5px black;
+                font-size: xx-large;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+                
+            }
+            #marking .btns {
+                text-align: center;
+                margin: 2em;
+            }
+            #marking .btn {
+                font-size: xx-large;
+                padding: 0.5em 1em;
+                border-radius: 10px;
+            }
+            .pass-btn {
+                background-color: rgb(7, 234, 109);
+                color: rgb(0, 78, 0);
+            }
+            .fail-btn {
+                background-color: rgb(231, 34, 4);
+                color: rgb(107, 0, 0);
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Drama Comedy Task - Term 2 - Felix Benson</h1>
+        <div class="column">
+            <a href="/q1.html" id="q1img" class="question-link"><span>Q1</span></a>
+        </div>
+        <div class="column">
+            <a href="/q2.html" id="q2img" class="question-link"><span>Q2</span></a>
+        </div>
+        <div class="column">
+            <a href="/q3.html" id="q3img" class="question-link"><span>Q3</span></a>
+        </div>
+        <div class="column">
+            <a href="/q4.html" id="q4img" class="question-link"><span>Q4</span></a>
+        </div>
+        <div class="column">
+            <a href="/q5.html" id="q5img" class="question-link"><span>Q5</span></a>
+        </div>
+        <div class="column" style="clear: right;">
+            <a href="/q6.html" id="q6img" class="question-link"><span>Q6</span></a>
+        </div>
+        <div class="clearfix"></div>
+        <p style="text-align: center; margin: 5px;">Scroll down to see teacher marking area below, very important and serious!</p>
+        <div id="marking">
+            <h2>Teacher area</h2>
+            <p>This is where you submit Felix's grade.</p>
+            <div class="btns">
+                <button id="pass-btn" class="pass-btn btn">Pass</button>
+                <button id="fail-btn" class="fail-btn btn">Fail</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        &nbsp;
+        <script>
+            var passBtn = document.getElementById('pass-btn');
+            var failBtn = document.getElementById('fail-btn');
+
+            var isSwitched = false;
+            passBtn.addEventListener('mouseenter', function() {
+                if (isSwitched) {
+                    isSwitched = false;
+
+                    failBtn.classList.remove('pass-btn');
+                    failBtn.classList.add('fail-btn');
+                    failBtn.textContent = 'Fail';
+                    passBtn.textContent = 'Pass';
+                    passBtn.classList.remove('fail-btn');
+                    passBtn.classList.add('pass-btn');
+
+                }
+            });
+
+            failBtn.addEventListener('mouseenter', function() {
+                isSwitched = true;
+                failBtn.classList.remove('fail-btn');
+                failBtn.classList.add('pass-btn');
+                failBtn.textContent = 'Pass';
+                passBtn.textContent = 'Fail';
+                passBtn.classList.remove('pass-btn');
+                passBtn.classList.add('fail-btn');
+            });
+
+            passBtn.addEventListener('click', function() {
+                alert('You have awarded Felix Benson 100% for this assignment, and every future assignment. Thank you!\n\n(just kidding ;)');
+
+            });
+
+            failBtn.addEventListener('click', function() {
+                alert('You have awarded Felix Benson 100% for this assignment, and every future assignment. Thank you!\n\n(just kidding ;)');
+
+            });
+        </script>
+    </body>
+</html>
